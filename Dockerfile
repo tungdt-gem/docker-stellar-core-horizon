@@ -1,3 +1,5 @@
+# docker build -t stellar .
+
 FROM stellar/base:latest
 
 MAINTAINER Bartek Nowotarski <bartek@stellar.org>
@@ -33,6 +35,7 @@ ADD pubnet /opt/stellar-default/pubnet
 ADD testnet /opt/stellar-default/testnet
 ADD standalone /opt/stellar-default/standalone
 
+ADD script.sh /script.sh
 
 ADD start /
 RUN ["chmod", "+x", "start"]

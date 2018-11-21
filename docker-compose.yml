@@ -1,0 +1,13 @@
+version: "3.1"
+services:
+  stellar:
+    image: stellar2
+    build: ./
+    container_name: stellar
+    ports:
+      - 8000:8000
+      - 11626:11626
+      - 11625:11625
+
+    entrypoint: "/script.sh"
+#    command: "--standalone"
