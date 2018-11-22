@@ -1,13 +1,18 @@
 version: "3.1"
 services:
   stellar:
-    image: stellar2
+    image: stellar
     build: ./
     container_name: stellar
     ports:
       - 8000:8000
       - 11626:11626
       - 11625:11625
+    volumes:
+      - ./pubnet:/opt/stellar-default/pubnet
+      - ./testnet:/opt/stellar-default/testnet
+      - ./standalone:/opt/stellar-default/standalone
+      - ./script.sh:/script.sh
 
     entrypoint: "/script.sh"
 #    command: "--standalone"
